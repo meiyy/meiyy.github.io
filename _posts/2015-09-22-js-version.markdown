@@ -29,14 +29,14 @@ tags:
 
 不得不说markdown还是很方便的 ~~ 麻麻再也不用担心我的html ~~
 
-{% highlight cpp linenos %}
+'''
 #include<iosteam>
 int main()
 {
 std::cout << "Hello github!" << std::endl;
 return 0;
 }
-{% endhighlight %}
+'''
 
 #### 著作权声明
   
