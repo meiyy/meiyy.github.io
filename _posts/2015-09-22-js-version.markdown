@@ -29,7 +29,7 @@ tags:
 
 不得不说markdown还是很方便的 ~~ 麻麻再也不用担心我的html ~~
 
-'''
+'''cpp
 #include<iosteam>
 int main()
 {
