@@ -29,7 +29,7 @@ tags:
 
 不得不说markdown还是很方便的 ~~ 麻麻再也不用担心我的html ~~
 
-'''javascript
+```cpp
 
 #include<iosteam>
 int main()
@@ -37,7 +37,8 @@ int main()
 std::cout << "Hello github!" << std::endl;
 return 0;
 }
-'''
+
+```
 
 #### 著作权声明
   
