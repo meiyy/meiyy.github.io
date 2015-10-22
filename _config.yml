@@ -5,16 +5,11 @@ header-img: img/home-bg.jpg
 email: shenzeyu1234@gmail.com
 description: "关于c++/acm | 这里是 Myy 的个人博客。"
 keyword: ""
-url: "http://myyacing.cf"
+url: "http://meiyy.github.io/"
 baseurl: ""
 
-
-
 # SNS settings
-RSS: false
 github_username:    meiyy
-
-
 
 # Build settings
 highlighter: pygments
@@ -22,8 +17,6 @@ permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -33,27 +26,14 @@ markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
-
-# Duoshuo settings
-duoshuo_username: S_DlRow_olleH
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "final dream:徒手写1024行代码,调试没bug"
 sidebar-avatar: /img/avatar-myy.jpg     # use absolute URL.
 
-
-
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
+featured-tags: true                  # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
 
 # Friends
 #friends: [

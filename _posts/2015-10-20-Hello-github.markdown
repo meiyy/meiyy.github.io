@@ -4,7 +4,6 @@ title:      "Hello github!"
 subtitle:   "记Github Page搭建成功"
 date:       2015-10-20
 author:     "Myy"
-header-img: "img/post-bg-2015.jpg"
 tags:
     - github
     - Jekyll
@@ -34,12 +33,12 @@ tags:
 #include<iosteam>
 int main()
 {
-std::cout << "Hello github!" << std::endl;
-return 0;
+    std::cout << "Hello github!" << std::endl;
+    return 0;
 }
 
 ```
 
 #### 著作权声明
   
-作者 [meiyy](http://github.com/myy)，首次发布于[Myy's Blog](http://myyacing.cf)，转载请保留以上链接
+作者 [meiyy](http://github.com/myy)，首次发布于[Myy's Blog]({{global.url}})，转载请保留以上链接
