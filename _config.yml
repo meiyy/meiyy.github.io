@@ -16,7 +16,6 @@ highlighter: pygments
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -28,7 +27,7 @@ kramdown:
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "final dream:徒手写1024行代码,调试没bug"
+sidebar-about-description: "<b>final dream:</b><br/>  徒手写1024行代码,调试没bug"
 sidebar-avatar: /img/avatar-myy.jpg     # use absolute URL.
 
 # Featured Tags

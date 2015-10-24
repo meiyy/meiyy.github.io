@@ -1,9 +1,10 @@
 ---
-layout:     post
-title:      "Hello github!"
-subtitle:   "记Github Page搭建成功"
-date:       2015-10-20
-author:     "Myy"
+layout:             post
+title:              "Hello github!"
+subtitle:           "记Github Page搭建成功"
+date:               2015-10-20
+author:             "Myy"
+have-copyright:     true
 tags:
     - github
     - Jekyll
@@ -39,6 +40,3 @@ int main()
 
 ```
 
-#### 著作权声明
-  
-作者 [meiyy](http://github.com/myy)，首次发布于[Myy's Blog]({{global.url}})，转载请保留以上链接
