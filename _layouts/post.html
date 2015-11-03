@@ -42,6 +42,11 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 				{{ content }}
+                
+                {% if page.have-copyright %}
+		        <b>著作权声明</b><br/>
+		        <div>作者 <a href="http://github.com/meiyy">myy</a>，首次发布于<a href="{{global.url}}">Myy's Blog</a>，转载请保留以上链接</div>
+		        {% endif %}
                 <hr>
                 <ul class="pager">
                     {% if page.previous.url %}
@@ -62,10 +67,7 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
-		{% if page.have-copyright %}
-		<b>著作权声明</b><br/>
-		<div>作者 <a href="http://github.com/meiyy">myy</a>，首次发布于<a href="{{global.url}}">Myy's Blog</a>，转载请保留以上链接</div>
-		{% endif %}                
+		                
 		<!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
