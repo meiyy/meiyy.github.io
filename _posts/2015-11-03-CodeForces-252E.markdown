@@ -16,7 +16,7 @@ tags:
 
 ### 题目出处
 
- [CodeForces 252E]("http://codeforces.com/problemset/problem/252/E")
+ [CodeForces 252E](http://codeforces.com/problemset/problem/252/E)
  
  
 ### 题目大意

@@ -13,7 +13,7 @@ tags:
     - permutation
 ---
 ### 题目出处
- [CodeForces 252D]("http://codeforces.com/problemset/problem/252/D")
+ [CodeForces 252D](http://codeforces.com/problemset/problem/252/D)
  
  
 ### 题目大意
