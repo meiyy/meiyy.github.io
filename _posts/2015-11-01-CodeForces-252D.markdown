@@ -1,0 +1,166 @@
+---
+layout:             post
+title:              "CodeForces 252D"
+subtitle:           "考察读题的水题"
+date:               2015-11-01
+author:             "Myy"
+have-copyright:     true
+tags:
+    - CodeForces
+    - CF
+    - 252D
+    - 排列
+    - permutation
+---
+### 题目出处
+ [CodeForces 252D]("http://codeforces.com/problemset/problem/252/D")
+ 
+ 
+### 题目大意
+ 给出序列qn，pn，以及操作次数k，问是否能通过k次操作使序列：1,2，...，n变成序列p1,p2,...,pn
+ 一次操作是指下列两种操作中的任意一种(a指原序列，b指操作后序列)：
+ 
+ 1. b[ i ] = a[ q[i] ];
+ 2. b[ q[i] ] = a[ i ].
+ 
+> 一旦某次操作后序列与pn相同，那么不能继续再进行操作.
+
+### 题目分析
+
+ 注意到操作1,2互逆，故当经过j次操作就能变成pn时（1 < j <= k）,那么只要k-j是偶数，就是满足的情况。
+ 暴力跑出连续100次操作1或连续100次操作2的结果，再比对一遍就能得到答案。
+ 
+ 其中有一些细节处理，不再赘述。
+
+### 测试样例
+
+> Input
+
+```
+ 4 1
+ 2 3 4 1
+ 1 2 3 4
+```
+> Output
+
+```
+ NO
+```
+
+> Input
+
+```
+ 4 1
+ 4 3 1 2
+ 3 4 2 1
+```
+> Output
+
+```
+ YES
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int q[105],p[105],n,k;
+int ans[2][105][105];
+int main()
+{
+	scanf("%d %d",&n,&k);
+	for(int i=1;i<=n;i++)
+	{
+		scanf("%d",&q[i]);
+	}
+	for(int i=1;i<=n;i++)
+	{
+		scanf("%d",p+i);
+		ans[0][0][i]=i;
+		ans[1][0][i]=i;
+	}
+	for(int i=1;i<=100;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			ans[0][i][j]=ans[0][i-1][q[j]];
+			ans[1][i][q[j]]=ans[1][i-1][j];
+		}
+	}
+
+	bool found=false;
+	int p1=-1,p2=-1;
+	for(int pos=0;pos<=100;pos++)
+	{
+		found=true;
+		for(int i=1;i<=n;i++)
+		{
+			if(ans[0][pos][i]!=p[i])
+			{
+				found=false;
+				break;
+			}
+		}
+		if(found)
+		{
+			p1=pos;
+			break;
+		}
+	}
+
+	found=false;
+	for(int pos=0;pos<=100;pos++)
+	{
+		found=true;
+		for(int i=1;i<=n;i++)
+		{
+			if(ans[1][pos][i]!=p[i])
+			{
+				found=false;
+				break;
+			}
+		}
+		if(found)
+		{
+			p2=pos;
+			break;
+		}
+	}
+	if(p1==0)
+	{
+		if(k==0)
+			puts("YES");
+		else
+			puts("NO");
+	}
+	else if((p1==1&&k==1)||(p1==1&&(k-p1)%2==0&&p2!=1)||(p2==1&&k==1)||(p2==1&&(k-p2)%2==0&&p1!=1))
+	{
+		puts("YES");
+	}
+	else if(p1>1&&p1<=k&&(k-p1)%2==0)
+	{
+		puts("YES");
+	}
+	else if(p2>1&&p2<=k&&(k-p2)%2==0)
+	{
+		puts("YES");
+	}
+	else
+	{
+		puts("NO");
+	}
+
+	return 0;
+}
+```

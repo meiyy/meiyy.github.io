@@ -1,0 +1,120 @@
+---
+layout:             post
+title:              "CodeForces 252E"
+subtitle:           "数论+dp"
+date:               2015-11-03
+author:             "Myy"
+have-copyright:     true
+tags:
+    - CodeForces
+    - CF
+    - 252E
+    - dp
+    - 动态规划
+    - 数论
+---
+
+### 题目出处
+
+ [CodeForces 252E]("http://codeforces.com/problemset/problem/252/E")
+ 
+ 
+### 题目大意
+
+给出三个数，a，b，k.现需要将a变成b，可选两种操作：
+1. a=a-1；
+2. a=a-(a mod x).
+> 2 <= x <= k （每次操作取的x值可以不同）
+> 1 <= b <= a <= 10 ^ 18 , 2 <= k <= 15
+问最少需要多少次操作。
+
+### 题目分析
+
+ 这道题求最小次数，看到a的规模很大，以为是贪心，结果怎么也找不到一个策略。此题用dp来解，直接dp肯定会T。设L=lcm（2,...,k）,注意到a=k\*L时，a只能减一。若a-b之间存在k\*L,那么k\*L必然不能被跳过。并且从(k+1)\*L到k\*L的操作次数是相等的，只需要dp计算一次，再乘以这样的区间个数即可。最后加上a,b分别到离他们最近的k\*L的距离。
+ 
+ 数据用unsigned long long可过.
+
+### 测试样例
+
+> Input
+
+```
+ 10 1 4
+```
+> Output
+
+```
+ 6
+```
+
+> Input
+
+```
+ 1000000000000000000 1 3
+```
+> Output
+
+```
+ 666666666666666667
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+typedef unsigned long long ull;
+ull a,b,k,lcm=1;
+ull step[360361];
+ull dp(ull n,ull en)
+{
+        if(n==en)
+                return 0;
+        if(step[n])
+                return step[n];
+        if(n%lcm==0)
+                return step[n]=dp(n-1,en)+1;
+        ull nmin=dp(n-1,en);
+        for(ull i=2;i<=k;i++)
+        {
+                if(n-n%i<en)
+                        continue;
+                if(n%i)
+                        nmin=min(nmin,dp(n-n%i,en));
+        }
+        return step[n]=nmin+1;
+}
+int main()
+{
+        scanf("%I64u %I64u %I64u",&a,&b,&k);
+        for(ull i=2;i<=k;i++)
+        {
+                lcm=lcm*i/__gcd(lcm,i);
+        }
+        ull ans=0;
+        if(a/lcm>b/lcm)
+        {
+                ans+=dp(a%lcm,0);
+                ans+=(a/lcm-b/lcm-1)*dp(lcm,0);
+                memset(step,0,sizeof(step));
+                ans+=dp(lcm,b%lcm);
+        }
+        else
+        {
+                ans+=dp(a%lcm,b%lcm);
+        }
+        printf("%I64u\n",ans);
+        return 0;
+}
+
+```
