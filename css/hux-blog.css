@@ -134,7 +134,7 @@ hr.small {
 }
 pre,
 .table-responsive {
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: hidden;
 }
 @media screen and (max-width: 500px) {
   pre code {
