@@ -1,0 +1,131 @@
+---
+layout:             post
+title:              "CodeForces 252B"
+subtitle:           ""
+date:               2015-11-04
+author:             "Myy"
+have-copyright:     true
+tags:
+    - CodeForces
+    - CF
+    - 252B
+---
+### 题目出处
+
+ [CodeForces 252B](http://codeforces.com/problemset/problem/252/B)
+ 
+ 
+### 题目大意
+ 
+ 给出一组数，问能否交换其中两个不相等的数，使得数组变为无序.能则输出两数位置，不能则输出-1.
+
+### 题目分析
+
+ 
+
+### 测试样例
+
+> Input
+```
+4
+1 2 3 4
+```
+> Output
+```
+1 2
+```
+
+> Input
+```
+3
+1 1 1
+```
+> Output
+```
+-1
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int num[100005];
+set<int> st;
+int main()
+{
+        int n;
+        scanf("%d",&n);
+        for(int i=0;i<n;i++)
+        {
+                scanf("%d",num+i);
+                st.insert(num[i]);
+        }
+        if(st.size()<2||n<3)
+        {
+                printf("-1\n");
+        }
+        else
+        {
+                int f1,f2;
+                for(int i=0;i<n;i++)
+                {
+                        f1=f2=-1;
+                        for(int j=i+1;j<n;j++)
+                        {
+                                if(f1!=-1&&num[i]<num[j])
+                                {
+                                        printf("%d %d\n",min(i+1,f1+1),max(i+1,f1+1));
+                                        goto en;
+                                }
+                                if(f2!=-1&&num[i]>num[j])
+                                {
+                                        printf("%d %d\n",min(i+1,f2+1),max(i+1,f2+1));
+                                        goto en;
+                                }
+                                if(num[i]<num[j])
+                                        f1=j;
+                                if(num[i]>num[j])
+                                        f2=j;
+                        }
+                        while(i+1<n&&num[i+1]==num[i])i++;
+                }
+                for(int i=n-1;i>=0;i--)
+                {
+                        f1=f2=-1;
+                        for(int j=i-1;j>=0;j--)
+                        {
+                                if(f1!=-1&&num[i]<num[j])
+                                {
+                                        printf("%d %d\n",min(i+1,f1+1),max(i+1,f1+1));
+                                        goto en;
+                                }
+                                if(f2!=-1&&num[i]>num[j])
+                                {
+                                        printf("%d %d\n",min(i+1,f2+1),max(i+1,f2+1));
+                                        goto en;
+                                }
+                                if(num[i]<num[j])
+                                        f1=j;
+                                if(num[i]>num[j])
+                                        f2=j;
+                        }
+                        while(i-1>=0&&num[i-1]==num[i])i--;
+                }
+                puts("-1");
+                en:
+                        ;
+        }
+        return 0;
+}
+```

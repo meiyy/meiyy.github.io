@@ -1,0 +1,84 @@
+---
+layout:             post
+title:              "CodeForces 252C"
+subtitle:           "水题"
+date:               2015-11-04
+author:             "Myy"
+have-copyright:     true
+tags:
+    - CodeForces
+    - CF
+    - 252C
+---
+### 题目出处
+
+ [CodeForces 252C](http://codeforces.com/problemset/problem/252/C)
+ 
+ 
+### 题目大意
+ 
+ 给出n个数，从中取三个数使最大数和最小数的差不超过d，问有多少种取法.
+
+### 题目分析
+
+ 保证数列有序的情况下，对每个数向后搜索到最大的同它距离不超过d的数，则中间有几种取法可由组合数求出.
+
+### 测试样例
+
+> Input
+```
+4 2
+-3 -2 -1 0
+```
+> Output
+```
+2
+```
+
+> Input
+```
+5 19
+1 10 20 30 50
+```
+> Output
+```
+1
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int num[100005];
+
+int main()
+{
+        int n,d;
+        scanf("%d%d",&n,&d);
+        for(int i=0;i<n;i++)
+        {
+                scanf("%d",num+i);
+        }
+        int p1=0,p2=2;
+        long long sum=0;
+        while(p1<n-2)
+        {
+                while(p2<n&&num[p2]-num[p1]<=d)p2++;
+                sum+=(p2-p1-2ll)*(p2-p1-1)/2;
+                p1++;
+        }
+        printf("%I64d\n",sum);
+        return 0;
+}
+```

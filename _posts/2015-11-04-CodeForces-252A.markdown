@@ -1,0 +1,86 @@
+---
+layout:             post
+title:              "CodeForces 252A"
+subtitle:           "亦或性质考察"
+date:               2015-11-04
+author:             "Myy"
+have-copyright:     true
+tags:
+    - CodeForces
+    - CF
+    - 252A
+    - 亦或
+    - xor
+---
+### 题目出处
+
+ [CodeForces 252A](http://codeforces.com/problemset/problem/252/A)
+ 
+ 
+### 题目大意
+ 
+ 给出n个数，取其中连续的一段算亦或值，求结果的最大值.
+
+### 题目分析
+
+ 没什么难点，注意到亦或的可交换性，只需把num\[n\]预处理成从第一个元素到第n个元素的亦或结果即可.
+
+### 测试样例
+
+> Input
+```
+5
+1 2 1 1 2
+```
+> Output
+```
+3
+```
+
+> Input
+```
+4
+4 2 4 8
+```
+> Output
+```
+14
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int num[105];
+int main()
+{
+        int n;
+        scanf("%d",&n);
+        for(int i=1;i<=n;i++)
+        {
+                scanf("%d",num+i);
+                num[i]^=num[i-1];
+        }
+        int nmax=0;
+        for(int i=0;i<n;i++)
+        {
+                for(int j=i+1;j<=n;j++)
+                {
+                        nmax=max(nmax,num[j]^num[i]);
+                }
+        }
+        printf("%d\n",nmax);
+        return 0;
+}
+```
