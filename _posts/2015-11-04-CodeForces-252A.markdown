@@ -1,6 +1,6 @@
 ---
 layout:             post
-title:              "CodeForces 252A"
+title:              "CodeForces 252A-Little Xor"
 subtitle:           "亦或性质考察"
 date:               2015-11-04
 author:             "Myy"

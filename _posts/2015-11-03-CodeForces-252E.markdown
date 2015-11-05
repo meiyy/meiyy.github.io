@@ -1,6 +1,6 @@
 ---
 layout:             post
-title:              "CodeForces 252E"
+title:              "CodeForces 252E-Number Transformation"
 subtitle:           "数论+dp"
 date:               2015-11-03
 author:             "Myy"

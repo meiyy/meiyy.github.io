@@ -1,6 +1,6 @@
 ---
 layout:             post
-title:              "CodeForces 252D"
+title:              "CodeForces 252D-Playing with Permutations"
 subtitle:           "考察读题的水题"
 date:               2015-11-01
 author:             "Myy"
