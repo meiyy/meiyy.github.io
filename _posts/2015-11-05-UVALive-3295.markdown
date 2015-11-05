@@ -1,0 +1,83 @@
+---
+layout:             post
+title:              "UVALive 3295"
+subtitle:           "数三角形"
+date:               2015-11-05
+author:             "Myy"
+have-copyright:     true
+tags:
+    - UVALive
+    - 3295
+    - Regionals 2005
+---
+### 题目出处
+
+ [UVALive 3295](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1296)
+ 
+ 
+### 题目大意
+ 
+ 给定m，n，求m * n的网格中，共有多少不同的格点三角形.两个三角形至少有一个顶点不一样则视为不同.
+
+### 题目分析
+
+ 这道题挺有意思，关键在于并不是随便三个点就能组成三角形，判断是否共线是本题关键.
+ 
+ 我的思路是：
+ 1. 每个三角形都对应唯一的 *最小外接矩形* 
+ 2. 只要计算每个子矩形内接三角形有多少，再加起来就是总共的三角形数
+ 3. 相似的子矩形具有相同的内接三角形数
+ 4. 计算一个子矩形内接三角形的时候按三角形顶点与矩形顶点重合的数目分类讨论.
+ > 需注意的就是当矩形对角线上两顶点作为三角形两顶点时，第三个顶点可以在子矩形的所有非顶点且不在对角线上的格点上.对焦线上的个点数是gcd(x,y)+1.
+ 5. 多case情况下进一步加速可考虑预处理所有x * y的子矩形内接三角形数保存起来.这里时间比较充足，没做优化.
+
+### 测试样例
+
+> Input
+```
+1 1
+1 2
+0 0
+```
+> Output
+```
+Case 1: 4
+Case 2: 18
+```
+
+### AC 代码
+ 
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	unsigned long long m,n;
+	int cnt=0;
+	while(scanf("%llu %llu",&m,&n),m||n)
+	{
+		cnt++;
+		unsigned long long ans=0;
+		for(unsigned long long mm=1;mm<=m;mm++)
+		{
+			for(unsigned long long nn=1;nn<=n;nn++)
+			{
+				ans+=(m-mm+1)*(n-nn+1)*(((nn+1)*(mm+1)-__gcd(nn,mm)-3)*2+4+(mm-1)*2+(nn-1)*2+4*(nn-1)*(mm-1));
+			}
+		}
+		printf("Case %d: %llu\n",cnt,ans);
+	}
+	return 0;
+}
+```
