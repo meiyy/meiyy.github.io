@@ -35,12 +35,13 @@ featured-tags: true                  # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 # Friends
-#friends: [
-#    {
-#        title: "Name 1",
-#        href: "URL 1"
-#    },{
+friends: [
+    {
+        title: "yyp's blog",
+        href: "http://www.yypblog.com"
+    }
+#    ,{
 #        title: "Name 2",
 #        href: "URL 2"
 #    }
-#]
+]
