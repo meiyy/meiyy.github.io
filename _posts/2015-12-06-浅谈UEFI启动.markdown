@@ -2,7 +2,7 @@
 layout:             post
 title:              "浅谈UEFI启动"
 subtitle:           "关于UEFI、GUID的一篇非正式简介"
-date:               2015-11-06
+date:               2015-12-06
 author:             "Myy"
 have-copyright:     true
 tags:
