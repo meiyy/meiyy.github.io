@@ -1,0 +1,20 @@
+---
+layout:             post
+title:              "bnuoj配置"
+subtitle:           "解决bnuojv3开源项目配置的有关问题"
+date:               2016-05-23
+author:             "Myy"
+have-copyright:     true
+tags:
+    - bnuoj
+    - nginx
+    - php
+    - mysql
+---
+## 写作初衷
+最近一段时间一直在尝试部署bnuoj的开源项目，期间遇到了很多问题，并通过各种途径解决。在此记录一下遇到的问题和解决方案，以便以后查看。感谢bnuoj开源项目的作者们。
+## 1
+bnuoj是用php写成的，前端bootstrap，数据库用的ezsql的mysql实现。
+我们最初选用的平台是Ubuntu15.10（是的，就是非稳定版，感觉这就是悲剧的开端）。
+bnuoj的github主页上有详细的安装wiki，我们按要求clone了web前端，放在nginx+php5-fpm下，马上就出了问题。
+localhost下可以访问网站，但登录功能不可用。点击登陆后显示“seccess”，手动查看数据库发现user表的最后登录时间已更新，然而浏览器仍显示未登录。发现cookie未写入。
