@@ -12,3 +12,8 @@ Say,
 It's forked from https://github.com/Huxpro/huxpro.github.io.git
 
 Thanks Jekyll and Github Pages!
+
+## Notice
+
+I am merging my blog to ihdijk.cf ,this site will probably not
+be updated any more.
