@@ -15,5 +15,5 @@ Thanks Jekyll and Github Pages!
 
 ## Notice
 
-I am merging my blog to ihdijk.cf ,this site will probably not
+I am merging my blog to www.ihdijk.cf ,this site will probably not
 be updated any more.
