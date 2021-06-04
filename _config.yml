@@ -3,19 +3,44 @@ title: Myy Blog
 SEOTitle: 申则宇的博客 | Myy Blog
 header-img: img/home-bg.jpg
 email: shenzeyu1234@gmail.com
-description: "关于c++/acm | 这里是 Myy 的个人博客。"
-keyword: ""
-url: "http://acing.cf/"
-baseurl: ""
+description: "关于C++/CG | 这里是 Myy 的个人博客。"
+keyword: "申则宇, 则宇, Myy, ihdijk, t4akbc, 申则宇的博客, Myy Blog, 博客"
+url: "http://shenzeyu.com"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+# Publish posts or collection documents with a future date.
+future: true
 
 # SNS settings
+RSS: false
+#weibo_username:     huxpro
+#zhihu_username:     huxpro
 github_username:    meiyy
+#twitter_username:   huxpro
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
+
+
 
 # Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
+
+
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -24,15 +49,56 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+
+# Disqus settings
+disqus_username: ihdijk
+
+# Netease settings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me
+
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "<b>final dream:</b><br/>  徒手写1024行代码,调试没bug"
-sidebar-avatar: /img/avatar-myy.jpg     # use absolute URL.
+sidebar-about-description: "<b>final dream:</b><br/>  徒手写1024行代码,编译运行无bug"
+sidebar-avatar: /img/avatar-myy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
 
 # Featured Tags
-featured-tags: true                  # whether or not using Feature-Tags
+featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
 
 # Friends
 friends: [
