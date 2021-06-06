@@ -15,5 +15,4 @@ Thanks Jekyll and Github Pages!
 
 ## Notice
 
-I am merging my blog to www.ihdijk.cf ,this site will probably not
-be updated any more.
+You can access my site at https://blog.shenzeyu.cn
