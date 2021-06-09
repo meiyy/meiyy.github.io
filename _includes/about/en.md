@@ -1,1 +1,3 @@
-Hi, I am ihdijk.
+Hi, I'm ihdijk!
+
+CV：[English](/cv_eng/)
