@@ -31,7 +31,7 @@ Beijing, China
 ```
 
 - Ph.D. in Computer Science & Technology
-- Will be advised by [Prof. Wencheng Wang](https://lcs.ios.ac.cn/~whn/) 
+- Advised by [Prof. Wencheng Wang](https://lcs.ios.ac.cn/~whn/) 
 
 ### **University of Chinese Academy of Sciences** `2018.9 - 2021.6`
 **Institute of Automation, Chinese Academy of Sciences**
@@ -72,20 +72,25 @@ Y Men, **Z Shen**, D Khan, DM Yan<br>
 _ACM SIGGRAPH 2018 Posters._<br>
 
 ---
-
-
-## Experience
-
-
 ## Honors & Awards
 
----
+### **COMAP's Mathematical Contest in Modeling** `Apr. 2017`
+Meritorious Winner
 
-## Teaching
+### **ACM International Collegiate Programming Contest** `Nov. 2016`
+Regional Contest Silver award
 
+### **China Collegiate Programming Contest, Hangzhou** `Oct. 2016`
+Bronze Award
 
-## Service
+### **China Collegiate Computing Contest** `Jul. 2016`
+Second prize
 
+### **LAN QIAO National Collegiate Programming Contest 2017** `May. 2017`
+Second prize
+
+### **LAN QIAO National Collegiate Programming Contest 2016	** `May. 2016`
+Third prize	
 
 <!-- ### Footer
 
