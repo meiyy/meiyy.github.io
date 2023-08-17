@@ -89,8 +89,10 @@ Second prize
 ### **LAN QIAO National Collegiate Programming Contest 2017** `May. 2017`
 Second prize
 
-### **LAN QIAO National Collegiate Programming Contest 2016	** `May. 2016`
-Third prize	
+### **LAN QIAO National Collegiate Programming Contest 2016** `May. 2016`
+Third prize
+
+---
 
 <!-- ### Footer
 
